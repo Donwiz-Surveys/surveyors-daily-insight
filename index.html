@@ -1,66 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surveyors' Daily Insight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
+      background-color: #1e3a8a;
+      color: #fff;
+      padding: 2rem 1rem;
       text-align: center;
     }
     nav {
-      background: #34495e;
-      padding: 10px;
-      text-align: center;
+      background-color: #3b82f6;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
     }
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #fff;
+      margin: 0 1rem;
       text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .container {
-      padding: 20px;
       max-width: 800px;
-      margin: auto;
-      background: white;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+      color: #1e3a8a;
+    }
+    h4 {
+      margin-bottom: 0.5rem;
+      color: #2563eb;
     }
     footer {
-      background: #2c3e50;
+      background-color: #1e3a8a;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 1rem;
       position: fixed;
-      width: 100%;
       bottom: 0;
+      width: 100%;
     }
-    .subscribe-form {
-      margin-top: 20px;
+    form {
+      margin-top: 1rem;
+    }
+    input[type="email"] {
+      padding: 0.5rem;
+      width: 70%;
+      margin-right: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Surveyors' Daily Insight</h1>
-    <p>Real-time Field Notes & Tips for Professionals</p>
+    <p>Field Updates & Technical Insights for Professional Surveyors</p>
   </header>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#updates">Daily Updates</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <div class="container" id="home">
     <h2>Welcome</h2>
-    <p>This platform is created for surveyors to share and learn from daily field experiences, best practices, and insights.</p>
+    <p>This platform is built for surveyors — students, professionals, and enthusiasts — who want to stay updated with practical field knowledge and everyday best practices.</p>
   </div>
 
   <div class="container" id="updates">
@@ -71,21 +112,21 @@
 
   <div class="container" id="about">
     <h2>About</h2>
-    <p>Surveyors' Daily Insight is a hub for land, hydrographic, engineering, and offshore surveyors. Here, you’ll find practical daily field updates, technical tips, lessons from real survey jobs, and insights into instruments and industry practices. Whether you're a student, rookie, or seasoned professional, this platform is for you.</p>
+    <p>Surveyors' Daily Insight is a hub for land, hydrographic, engineering, and offshore surveyors. Here, you’ll find practical daily field updates, technical tips, lessons from real survey jobs, and insights into instruments and industry practices.</p>
   </div>
 
   <div class="container" id="contact">
     <h2>Contact & Subscribe</h2>
-    <p>Email: koche2105@gmail.com</p>
-    <form class="subscribe-form" action="https://formspree.io/f/xwkgbkkr" method="POST">
-      <label for="email">Subscribe for updates:</label><br>
-      <input type="email" name="email" required placeholder="Enter your email" />
+    <p>If you’d like to get updates by email, drop your address below.</p>
+    <form action="https://formspree.io/f/xwkgbkkr" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
+    <p>Or contact us at: <strong>koche2105@gmail.com</strong></p>
   </div>
 
   <footer>
-    <p>&copy; 2025 Surveyors' Daily Insight</p>
+    <p>&copy; 2025 Surveyors' Daily Insight. All rights reserved.</p>
   </footer>
 </body>
 </html>
