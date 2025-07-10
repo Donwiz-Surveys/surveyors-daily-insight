@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surveyors' Daily Insight</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .subscribe-form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Surveyors' Daily Insight</h1>
+    <p>Real-time Field Notes & Tips for Professionals</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#updates">Daily Updates</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container" id="home">
+    <h2>Welcome</h2>
+    <p>This platform is created for surveyors to share and learn from daily field experiences, best practices, and insights.</p>
+  </div>
+
+  <div class="container" id="updates">
+    <h2>Daily Update - Day 1</h2>
+    <h4>Using GNSS for Control Point Recovery in Dense Urban Areas</h4>
+    <p>Today we encountered GNSS signal issues due to multipath errors from high-rise buildings. To overcome this, we used a total station connected to a temporary control point, established from a nearby known GNSS benchmark. Always consider combining technologies in difficult environments.</p>
+  </div>
+
+  <div class="container" id="about">
+    <h2>About</h2>
+    <p>Surveyors' Daily Insight is a hub for land, hydrographic, engineering, and offshore surveyors. Here, you’ll find practical daily field updates, technical tips, lessons from real survey jobs, and insights into instruments and industry practices. Whether you're a student, rookie, or seasoned professional, this platform is for you.</p>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Contact & Subscribe</h2>
+    <p>Email: koche2105@gmail.com</p>
+    <form class="subscribe-form" action="https://formspree.io/f/xwkgbkkr" method="POST">
+      <label for="email">Subscribe for updates:</label><br>
+      <input type="email" name="email" required placeholder="Enter your email" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Surveyors' Daily Insight</p>
+  </footer>
+</body>
+</html>
