@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Surveyors' Daily Insight</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
@@ -14,57 +14,83 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f7fa;
+      background-color: #f1f5f9;
       color: #333;
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1532392079023-899734f7f83b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-      color: #fff;
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      color: white;
+      padding: 4rem 1rem;
       text-align: center;
-      padding: 4rem 1rem 3rem;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
 
     nav {
-      background-color: #1e3a8a;
+      background-color: #1e40af;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
+      padding: 1rem;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav li {
+      position: relative;
+    }
+
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      padding: 0.5rem 1rem;
+      display: block;
     }
 
     nav a:hover {
-      color: #93c5fd;
+      background-color: #2563eb;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #1e3a8a;
+      min-width: 180px;
+      z-index: 1;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      padding: 0.75rem 1rem;
+      color: #fff;
+    }
+
+    nav li:hover .dropdown-content {
+      display: block;
     }
 
     .section {
       max-width: 1000px;
       margin: 2rem auto;
-      padding: 1.5rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
     }
 
     .section h2 {
@@ -74,15 +100,15 @@
 
     .update {
       display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
       flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
 
     .update img {
-      width: 300px;
+      max-width: 350px;
       border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .update-content {
@@ -102,13 +128,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      align-items: center;
     }
 
     input[type="email"] {
-      padding: 0.5rem;
       flex: 1;
-      min-width: 200px;
+      padding: 0.6rem;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
@@ -131,7 +155,7 @@
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
 
     @media(max-width: 768px) {
@@ -140,70 +164,94 @@
         align-items: center;
       }
 
-      nav {
+      nav ul {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Surveyors' Daily Insight</h1>
-    <p>Field Updates & Technical Insights for Professional Surveyors</p>
-  </header>
+<header>
+  <h1>Surveyors' Daily Insight</h1>
+  <p>Real-World Field Reports & Tech Tips for Survey Professionals</p>
+</header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#updates">Daily Updates</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="section" id="home">
-    <h2>Welcome</h2>
-    <p>This platform is for surveyors — students, professionals, and enthusiasts — who want to stay updated with practical field knowledge and everyday best practices.</p>
-  </section>
-
-  <section class="section" id="updates">
-    <h2>Daily Updates</h2>
-
-    <div class="update">
-      <div class="update-content">
-        <h4>Day 1: Using GNSS for Control Point Recovery</h4>
-        <p>Today we encountered GNSS signal issues due to multipath errors from high-rise buildings. To overcome this, we used a total station connected to a temporary control point, established from a nearby known GNSS benchmark. Always consider combining technologies in difficult environments.</p>
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li>
+      <a href="#updates">Updates ▾</a>
+      <div class="dropdown-content">
+        <a href="#daily">Daily Field Reports</a>
+        <a href="#tech">Tech News</a>
       </div>
-    </div>
-
-    <div class="update">
-      <img src="https://sl.bing.net/cxxbIf7QfaS" alt="Drone Survey" />
-      <div class="update-content">
-        <h4>Day 2: Embracing New Surveying Technologies - Drone Photogrammetry</h4>
-        <p>Modern surveying has seen a revolutionary shift with the integration of drone photogrammetry. These high-resolution UAVs can rapidly capture data over large areas with remarkable precision, drastically reducing man-hours and increasing site safety.</p>
-        <p>With RTK-enabled drones and post-processing platforms, surveyors now achieve centimeter-level accuracy — without setting foot on rough terrain.</p>
+    </li>
+    <li>
+      <a href="#about">About ▾</a>
+      <div class="dropdown-content">
+        <a href="#mission">Our Mission</a>
+        <a href="#team">The Team</a>
       </div>
+    </li>
+    <li>
+      <a href="#contact">Contact ▾</a>
+      <div class="dropdown-content">
+        <a href="#email">Email</a>
+        <a href="#whatsapp">WhatsApp</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<section class="section" id="home">
+  <h2>Welcome</h2>
+  <p>Surveyors' Daily Insight is a platform built for land, hydrographic, engineering, and offshore surveyors. Here, you’ll find real-time field updates, equipment tips, and cutting-edge industry news.</p>
+</section>
+
+<section class="section" id="updates">
+  <h2 id="daily">Daily Field Reports</h2>
+
+  <div class="update">
+    <img src="https://cdn.pixabay.com/photo/2021/06/09/08/49/surveyor-6319235_1280.jpg" alt="Total Station Surveying">
+    <div class="update-content">
+      <h4>Day 1: Using GNSS & Total Station for Control Point Recovery</h4>
+      <p>In dense urban zones, GNSS signals often degrade due to multipath from high-rise buildings. To overcome this, we deployed a robotic total station aligned to a GNSS-derived temporary point. It improved accuracy and saved time.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" id="about">
-    <h2>About</h2>
-    <p>Surveyors' Daily Insight is a hub for land, hydrographic, engineering, and offshore surveyors. Find practical field updates, tips, lessons from real survey jobs, and insights into instruments and industry practices.</p>
-  </section>
+  <div class="update" id="tech">
+    <img src="https://cdn.pixabay.com/photo/2018/03/06/18/19/drone-3207861_1280.jpg" alt="Drone Photogrammetry">
+    <div class="update-content">
+      <h4>Day 2: Embracing Drone Photogrammetry in Mapping</h4>
+      <p>High-resolution drones are transforming survey workflows. RTK-enabled UAVs quickly deliver 3D data and orthophotos, integrating seamlessly into CAD/GIS software and improving safety in tough terrain.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="contact">
-    <h2>Contact & Subscribe</h2>
-    <p>If you’d like updates by email, enter your email below.</p>
-    <form action="https://formspree.io/f/xwkgbkkr" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p style="margin-top: 1rem;">Or contact us directly: <strong>koche2105@gmail.com</strong></p>
-  </section>
+<section class="section" id="about">
+  <h2 id="mission">Our Mission</h2>
+  <p>To educate, inform, and unite survey professionals by sharing practical field experiences, technology updates, and industry knowledge.</p>
 
-  <footer>
-    <p>&copy; 2025 Surveyors' Daily Insight. All rights reserved.</p>
-  </footer>
+  <h2 id="team" style="margin-top: 2rem;">The Team</h2>
+  <p>Founded by passionate field surveyors, our contributors include GNSS specialists, UAV pilots, and mapping professionals with a shared vision for better practice.</p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact & Subscribe</h2>
+  <p>Enter your email to get daily updates from the field.</p>
+  <form action="https://formspree.io/f/xwkgbkkr" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="email" style="margin-top: 1rem;">📧 Email: <strong>koche2105@gmail.com</strong></p>
+  <p id="whatsapp">📱 WhatsApp: <strong>+234-XXX-XXX-XXXX</strong></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Surveyors' Daily Insight. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
